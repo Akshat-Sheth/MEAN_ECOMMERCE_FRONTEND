@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "ngshop-root",
+  selector: "bluebits-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
 })

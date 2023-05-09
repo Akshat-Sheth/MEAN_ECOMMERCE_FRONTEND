@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
-// import { HomePageComponent } from './home-page/home-page/home-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import { FooterComponent } from './shared/footer/footer.component'; 
+import { UiModule } from '@bluebits/ui'
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'products',
-    component: ProductListComponent,
+    component: ProductListComponent
   },
 ];
 
@@ -30,7 +30,7 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, UiModule,RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })
