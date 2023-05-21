@@ -16,7 +16,7 @@ import { TableModule } from 'primeng/table';
 import { DataViewModule } from 'primeng/dataview'
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { HttpClientModule } from '@angular/common/http';
-import { CategoriesService } from '@bluebits/products';
+import { CategoriesService, ProductService } from '@bluebits/products';
 import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,7 +25,9 @@ import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ConfirmDialogModule } from 'primeng/confirmdialog'
 import { ConfirmationService } from 'primeng/api'
-import { ColorPickerModule } from 'primeng/colorpicker'
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { ProductItemComponent } from './pages/products/product-item/product-item.component';
+import { ProductFormComponent } from './pages/products/product-form/product-form.component'
 
 const UX_MODULE = [CardModule,ToolbarModule,ColorPickerModule,InputTextModule,ButtonModule,DataViewModule,ToastModule]
 
@@ -49,6 +51,18 @@ const routes: Routes = [
       {
         path:'categories/form/:id',
         component:CategoriesFormComponent
+      },
+      {
+        path:'products',
+        component:ProductItemComponent
+      },
+      {
+        path:'cateproductsgories/form',
+        component:ProductFormComponent
+      },
+      {
+        path:'products/form/:id',
+        component:ProductFormComponent
       }
     ],
   },
@@ -63,6 +77,8 @@ const routes: Routes = [
     DashboardComponent,
     CategoriesListComponent,
     CategoriesFormComponent,
+    ProductItemComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +91,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ConfirmDialogModule
   ],
-  providers: [CategoriesService,MessageService, ConfirmationService],
+  providers: [CategoriesService,MessageService, ConfirmationService,ProductService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
