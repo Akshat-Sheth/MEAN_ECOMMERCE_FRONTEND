@@ -27,9 +27,14 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog'
 import { ConfirmationService } from 'primeng/api'
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { ProductItemComponent } from './pages/products/product-item/product-item.component';
-import { ProductFormComponent } from './pages/products/product-form/product-form.component'
+import { ProductFormComponent } from './pages/products/product-form/product-form.component';
+import {  InputNumberModule } from 'primeng/inputnumber'
+import {  InputTextareaModule } from 'primeng/inputtextarea'
+import {  InputSwitchModule } from 'primeng/inputswitch'
+import { DropdownModule } from 'primeng/dropdown'
+import { EditorModule } from 'primeng/editor';
 
-const UX_MODULE = [CardModule,ToolbarModule,ColorPickerModule,InputTextModule,ButtonModule,DataViewModule,ToastModule]
+const UX_MODULE = [CardModule,EditorModule,DropdownModule,InputSwitchModule,InputTextareaModule,ToolbarModule,ColorPickerModule,InputTextModule,ButtonModule,DataViewModule,ToastModule,InputNumberModule]
 
 const routes: Routes = [
   {
@@ -57,7 +62,7 @@ const routes: Routes = [
         component:ProductItemComponent
       },
       {
-        path:'cateproductsgories/form',
+        path:'products/form',
         component:ProductFormComponent
       },
       {
