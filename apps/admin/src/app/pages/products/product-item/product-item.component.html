@@ -49,12 +49,12 @@
               <td>{{ product.dateCreated | date: 'short' }}</td>
               <td>
                 <p-button
-                  (click)="deleteProduct(product.id)"
+                  (click)="deleteProduct(product._id)"
                   styleClass="p-button-danger p-mr-2"
                   icon="pi pi-trash"
                 ></p-button>
                 <p-button
-                  (click)="updateProduct(product.id)"
+                  (click)="updateProduct(product._id)"
                   styleClass="p-button-success"
                   icon="pi pi-pencil"
                 ></p-button>

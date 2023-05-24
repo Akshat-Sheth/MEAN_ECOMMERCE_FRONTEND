@@ -19,16 +19,18 @@ export class ProductService {
         return this.http.get<Product[]>(this.apiURLProducts)
     }
 
-    createProduct(productData: FormData): Observable<Product> {
-        return this.http.post<Product>(this.apiURLProducts, productData);
+    createProduct(productData:any): Observable<any> {
+      console.log('messi -> ',productData.image)
+        return this.http.post(this.apiURLProducts, productData) ;
       }
     
-      getProduct(productId: string): Observable<Product> {
-        return this.http.get<Product>(`${this.apiURLProducts}/${productId}`);
+      getProduct(productId: string): Observable<any> {
+        return this.http.get<any>(`${this.apiURLProducts}/${productId}`);
       }
     
-      updateProduct(productData: FormData, productid: string): Observable<Product> {
-        return this.http.put<Product>(`${this.apiURLProducts}/${productid}`, productData);
+      updateProduct(productData:FormData, productid: string): Observable<any> {
+        console.log(productData,productid)
+        return this.http.put<any>(`${this.apiURLProducts}/${productid}`, productData);
       }
     
       deleteProduct(productId: string): Observable<any> {

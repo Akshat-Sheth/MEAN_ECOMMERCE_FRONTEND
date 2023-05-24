@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from '@bluebits/products';
 
 @Component({
@@ -9,7 +10,7 @@ export class ProductItemComponent  implements OnInit  {
 
   products = []
 
-  constructor( private productService:ProductService ){
+  constructor( private productService:ProductService, private router:Router ){
     console.log('hello')
   }
 
@@ -23,6 +24,11 @@ export class ProductItemComponent  implements OnInit  {
       this.products = res
     })
   }
+
+  updateProduct(productid: string) {
+    this.router.navigateByUrl(`products/form/${productid}`);
+  }
+
 
 
 }
