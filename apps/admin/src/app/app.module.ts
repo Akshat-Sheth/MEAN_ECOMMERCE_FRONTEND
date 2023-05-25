@@ -33,8 +33,13 @@ import {  InputTextareaModule } from 'primeng/inputtextarea'
 import {  InputSwitchModule } from 'primeng/inputswitch'
 import { DropdownModule } from 'primeng/dropdown'
 import { EditorModule } from 'primeng/editor';
+import { UserListComponent } from './pages/users/user-list/user-list.component';
+import { UserFormComponent } from './pages/users/user-form/user-form.component';
+import { UsersService } from '@bluebits/users'
+import { TagModule } from 'primeng/tag'
+import { InputMaskModule } from 'primeng/inputmask'
 
-const UX_MODULE = [CardModule,EditorModule,DropdownModule,InputSwitchModule,InputTextareaModule,ToolbarModule,ColorPickerModule,InputTextModule,ButtonModule,DataViewModule,ToastModule,InputNumberModule]
+const UX_MODULE = [CardModule,InputMaskModule,TagModule,EditorModule,DropdownModule,InputSwitchModule,InputTextareaModule,ToolbarModule,ColorPickerModule,InputTextModule,ButtonModule,DataViewModule,ToastModule,InputNumberModule]
 
 const routes: Routes = [
   {
@@ -68,6 +73,18 @@ const routes: Routes = [
       {
         path:'products/form/:id',
         component:ProductFormComponent
+      },
+      {
+        path:'users',
+        component:UserListComponent
+      },
+      {
+        path:'users/form',
+        component:UserFormComponent
+      },
+      {
+        path:'users/form/:id',
+        component:UserFormComponent
       }
     ],
   },
@@ -84,6 +101,8 @@ const routes: Routes = [
     CategoriesFormComponent,
     ProductItemComponent,
     ProductFormComponent,
+    UserListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +115,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ConfirmDialogModule
   ],
-  providers: [CategoriesService,MessageService, ConfirmationService,ProductService],
+  providers: [CategoriesService,MessageService, ConfirmationService,ProductService,UsersService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
